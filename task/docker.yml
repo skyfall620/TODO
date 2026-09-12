@@ -1,0 +1,23 @@
+version: '3'
+
+tasks:
+  up:
+    desc: запуск контейнера
+    cmds:
+      - docker compose up -d
+  ps:
+    desc: список контейнеров
+    cmds:
+      - docker compose ps
+  down:
+    desc: остановить контейнер (но сохранить данные) 
+    cmds:
+      - docker compose down
+  down_v:
+    desc: удалить ВСЁ (включая данные)
+    cmds:
+      - docker compose down -v
+  psql:
+    desc: интерактивный интерфейс на базе терминала для PostgreSQL
+    cmds:
+      - docker compose exec postgres psql -U todo -d todo

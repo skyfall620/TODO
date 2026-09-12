@@ -1,0 +1,7 @@
+version: '3'
+
+tasks:
+  run:
+    desc: запуск приложения
+    cmds:
+      - go run ./cmd/api/main.go

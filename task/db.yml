@@ -1,0 +1,15 @@
+version: '3'
+
+vars:
+  DATABASE_URL: postgres://todo:my_pass@localhost:5432/todo?sslmode=disable
+
+tasks:
+  migrate_up:
+    desc: migrate up
+    cmds:
+      - migrate -path ./schema -database "{{.DATABASE_URL}}" up 
+    silent: true
+  migrate_down:
+    desc: migrate down 1
+    cmds:
+      - migrate -path ./schema -database "{{.DATABASE_URL}}" down 1
